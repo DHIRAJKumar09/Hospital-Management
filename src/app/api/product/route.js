@@ -9,9 +9,9 @@ export async function POST(req,res) {
     const body = await req.json();
     console.log(body);
 
-    const { productname, description, price, category } = body;
+    const { productname, description, price, category,image } = body;
 
-    if (!productname || !description || !price || !category) {
+    if (!productname || !description || !price || !category ) {
       return NextResponse.json({
         success: false,
         message: "All fields are required.",
@@ -19,7 +19,7 @@ export async function POST(req,res) {
       },{status:400});
     }
 
-    const product = new Product({ productname, description, price, category });
+    const product = new Product({ productname, description, price, category,image });
     const savedProduct = await product.save();
 
     return NextResponse.json({
@@ -48,3 +48,27 @@ export async function GET(){
     }
 
 }
+export async function PUT(req,res){
+  try{
+    const body = await req.json();
+    const {id,productname,description,price,category,image} = body;
+    if(!id || !productname || !description || !price || !category ){
+      return NextResponse.json({message:"Please fill all required field",success:false},{status:400});
+    }
+    const updatedproduct = await Product.findByIdAndUpdate(id,{productname,description,price,category,image},{new:true});
+
+    if(!updatedproduct){
+      return NextResponse.json({success:false,message:"Product not found"},{status:404});
+    }
+    return NextResponse.json({success:true,message:"Product Updated",product:updatedproduct},{status:201});
+
+  }catch(error){
+    console.error("Error updating product:", error);
+    return NextResponse.json(
+      { success: false, message: "Internal server error.", error: error.message },
+      { status: 500 }
+    );
+
+  }
+}
+
