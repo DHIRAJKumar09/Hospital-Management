@@ -1,41 +1,54 @@
-import dbConnect from "@/lib/Mongodbconn";
-import UsersModel from "@/models/UsersModel";
-import { NextResponse } from "next/server";
-import bcrypt from 'bcrypt'
-import jwt from 'jsonwebtoken';
+"use client";
 
-export async function POST(req,res){
-    try{
+import { useState } from "react";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
-        const body = await req.json();
-        const{email,password} = body;
-        const users = await UsersModel.findOne({email});
-        if(!users){
-            return NextResponse.json({
-                message:"User not registerd yet",
-                success:false,
-            },{status:404})
-        }
-        const decodepassword = await bcrypt.compare(password,users.password);
-        if(!decodepassword){
-            return NextResponse.json({
-                message:"Password is not match",
-                success:false,
-            },{status:404})
-        }
-        const token =  {users:users};
-        const jwtoken =  jwt.sign(token,process.env.JWT_SECRET,{expiresIn:'7d'});
-        return NextResponse.json({
-            message:"Login successfully",
-            jwtoken,
-            success:true,
-        })
+export default function LoginPage() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const router = useRouter();
 
-    }catch(error){
-        return NextResponse.json({
-            message:"Login failed ,internal server error",
-            success:false,
-        },{status:500})
+  const handleManualLogin = async (e) => {
+    e.preventDefault();
+    const response = await fetch("/api/users/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
 
+    const data = await response.json();
+    if (data.success) {
+      alert("Login successful");
+      router.push("/dashboard");
+    } else {
+      alert(data.message);
     }
+  };
+
+  const handleGoogleSignIn = () => {
+    signIn("google", { callbackUrl: "/dashboard" });
+  };
+
+  return (
+    <div className="login-container">
+      <h1>Login</h1>
+      <form onSubmit={handleManualLogin}>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button type="submit">Login</button>
+      </form>
+      <button onClick={handleGoogleSignIn}>Sign In with Google</button>
+    </div>
+  );
 }
