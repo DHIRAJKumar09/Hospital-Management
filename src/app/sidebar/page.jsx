@@ -1,12 +1,12 @@
 'use client'
-import React from "react";
+import React,{useState} from "react";
 import {
     Sidebar,
     SidebarContent,
     SidebarFooter,
     SidebarGroup,
     SidebarHeader,
-   
+    SidebarProvider,
   } from "@/components/ui/sidebar";  // Assuming you're using shadcn/ui
   import { HomeIcon } from "lucide-react";
   import { CalendarIcon } from "lucide-react";
@@ -18,8 +18,7 @@ import {
 
 
     return (
-   
-    
+        <SidebarProvider>
         <Sidebar className={`w-64 h-full bg-primary `}>
           <SidebarHeader className="px-4 py-2 text-2xl font-bold">
             Hospital Manager
@@ -51,8 +50,7 @@ import {
             <p>© 2024 Hospital Manager</p>
           </SidebarFooter>
         </Sidebar>
-
-
+        </SidebarProvider>
       
     
     );
