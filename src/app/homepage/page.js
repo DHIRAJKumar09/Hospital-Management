@@ -128,7 +128,7 @@ const images = [
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 ">
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
       <Navbar >
@@ -136,7 +136,7 @@ export default function HomePage() {
           
 
           {/* Navigation Buttons */}
-          <div className="space-x-4">
+          <div className="space-x-2">
             <Button variant="outline">
               <Dialoghome />
             </Button>

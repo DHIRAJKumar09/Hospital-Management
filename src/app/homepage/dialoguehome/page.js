@@ -23,7 +23,7 @@ const Dialoghome = () => {
     <>
       <Dialog>
         <DialogTrigger>
-          <Button variant="outline">Login</Button>
+          <Button>Login</Button>
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
