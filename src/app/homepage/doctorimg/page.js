@@ -11,7 +11,7 @@ import Image from "next/image";
 
 
 
-export const DoctorHomepage = ({ doctor }) => {
+ const DoctorHomepage = ({ doctor }) => {
   return (
 
 
@@ -41,6 +41,8 @@ export const DoctorHomepage = ({ doctor }) => {
 
   );
 };
+
+export default DoctorHomepage
 
 
 
