@@ -2,7 +2,7 @@
 import Accordionhome from "./accordionhome/page";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { DoctorHomepage } from "./doctorimg/page";
+import {DoctorHomepage} from "./doctorimg/page";
 import { Input } from "@/components/ui/input";
 import { Navbar } from "@/components/ui/navbar";
 import HomeChart from '@/app/homepage/homecharts/page'

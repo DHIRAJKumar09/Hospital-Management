@@ -9,8 +9,7 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 
-// Doctor data
-// Doctor Profile Card Component
+
 
 export const DoctorHomepage = ({ doctor }) => {
   return (
