@@ -2,7 +2,7 @@
 import Accordionhome from "./accordionhome/page";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import DoctorHomepage from "./doctorimg/page";
+import DoctorSection from "./doctorimg/page";
 import { Input } from "@/components/ui/input";
 import { Navbar } from "@/components/ui/navbar";
 import HomeChart from '@/app/homepage/homecharts/page'
@@ -259,18 +259,19 @@ export default function HomePage() {
       </div>
      
     </section>
-
+    <DoctorSection/>
     {/* doctor profile */}
-    <section className="py-16 bg-gray-300 " >
+    {/* <section className="py-16 bg-gray-300 " >
       <div className="container mx-auto max-w-screen-lg px-4" >
         <h2 className="text-center text-3xl font-bold text-gray-800 mb-12">Meet Our Doctors</h2>
       </div>
       <div className="p-6 flex flex-1 gap-6 flex-wrap justify-center align-center">
+     
         {doctorProfiles.map((doctor,index)=>(
           <DoctorHomepage key={index} doctor={doctor}/>
         ))}
       </div>
-    </section>
+    </section> */}
 
       {/* Achievements Section */}
       <section className="py-16 bg-gray-100">
