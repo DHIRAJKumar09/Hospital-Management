@@ -2,7 +2,7 @@ import dbConnect from '@/lib/Mongodbconn';
 import { NextResponse } from 'next/server';
 import bcrypt from 'bcrypt'
 import { Patient } from '../.././../../models/HospitalModels/PatitentModel';
-export async function POST(req,res){
+export async function POST(req){
     
     try{
         await dbConnect();
