@@ -130,19 +130,23 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Navbar */}
-      <Navbar className="fixed top-0 w-full bg-white shadow-md  left-0 z-50">
-        <div className="flex items-center justify-between w-full max-w-screen-lg mx-auto">
-          <div className="space-x-4">
+      <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+      <Navbar >
+        <div className="flex items-center justify-between max-w-screen-lg mx-auto">
+          
 
+          {/* Navigation Buttons */}
+          <div className="space-x-4">
             <Button variant="outline">
-            <Dialoghome/>
+              <Dialoghome />
             </Button>
             <Button>
-            <Drawerhome/>
+              <Drawerhome />
             </Button>
           </div>
         </div>
       </Navbar>
+      </nav>
 
       {/* Hero Section */}
       <header className=" relative bg-fixed bg-hero-pattern bg-cover  flex flex-col   items-center justify-center  text-white h-screen">
