@@ -1,6 +1,6 @@
-import { Doctors } from "@/models/HospitalModels/DoctorModle";
+
 import { NextResponse } from "next/server";
-export async function POST(req,res){
+export async function POST(){
     try{
 
     }catch(error){

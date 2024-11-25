@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { DefaultTooltipContent } from "recharts";
+import Image from "next/image";
 
 // Doctor data
 // Doctor Profile Card Component
@@ -22,7 +22,7 @@ export const DoctorHomepage = ({ doctor }) => {
         <CardDescription>{doctor.specialization}</CardDescription>
       </CardHeader>
       <CardContent>
-        <img
+        <Image
           src={doctor.src}
           alt={doctor.name}
           className="w-full h-48 object-cover rounded-lg"

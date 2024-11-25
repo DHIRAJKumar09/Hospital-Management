@@ -6,7 +6,7 @@ import {
     SidebarFooter,
     SidebarGroup,
     SidebarHeader,
-    SidebarProvider,
+   
   } from "@/components/ui/sidebar";  // Assuming you're using shadcn/ui
   import { HomeIcon } from "lucide-react";
   import { CalendarIcon } from "lucide-react";

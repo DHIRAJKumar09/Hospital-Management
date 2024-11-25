@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { Doctors } from "../../../../models/HospitalModels/DoctorModle";
 import bcrypt from 'bcrypt';
 
-export async function POST(req,res){
+export async function POST(req){
    try{
     const body = await req.json();
     const {fullName,email,password, specialization,licenseNumber,contactNumber,branch,experienceYears,address} = body;

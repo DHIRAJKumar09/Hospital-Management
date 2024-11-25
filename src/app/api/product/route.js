@@ -3,7 +3,7 @@ import Product from "@/models/productmodel";
 import { NextResponse } from "next/server";
 
 
-export async function POST(req,res) {
+export async function POST(req) {
   await dbConnect(); // Connect to the database
   try {
     const body = await req.json();
@@ -48,7 +48,7 @@ export async function GET(){
     }
 
 }
-export async function PUT(req,res){
+export async function PUT(req){
   try{
     const body = await req.json();
     const {id,productname,description,price,category,image} = body;

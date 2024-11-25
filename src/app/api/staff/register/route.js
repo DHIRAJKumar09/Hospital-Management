@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { Staff } from "../../../../models/HospitalModels/StaffModel";
 
-export async function POST(req,res){
+export async function POST(req){
     try{
         const body = await req.json();
         const staff = await Staff.find({email});
@@ -18,6 +18,7 @@ export async function POST(req,res){
         return NextResponse.json({
             message:"staff register successfully",
             success:'true',
+            saveStaff,
         },{status:200});
 
     }catch(error){

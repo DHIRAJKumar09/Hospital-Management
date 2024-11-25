@@ -1,13 +1,14 @@
 import { Branch } from "../../../models/HospitalModels/BranchModle";
 
-export async function POST(req,res){
+export async function POST(req){
     try{
         const body = await req.json();
         const newBranch = new Branch({body});
-        const savbebrnach = await newBranch.save();
+        const savebranch = await newBranch.save();
         return NextResponse.json({
             message:"branch created",
             success:true,
+            savebranch,
         })
 
     }catch(error){

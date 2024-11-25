@@ -2,7 +2,8 @@ import dbConnect from "@/lib/Mongodbconn";
 import Product from "@/models/productmodel";
 import { NextResponse } from "next/server";
 
-export async function PUT(req,res){
+export async function PUT(req){
+    await dbConnect();
     try{
       const body = await req.json();
       const {id,productname,description,price,category,image} = body;

@@ -90,7 +90,7 @@ export default function LoginPage() {
           Sign In with Google
         </button>
         <p className="mt-4 text-sm text-center text-gray-500">
-          Don't have an account?{" "}
+          Don't have an account?
           <a href="/register" className="text-blue-500 hover:underline">
             Register
           </a>

@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { HomeIcon } from "lucide-react";
-import { cn } from "@/lib/utils";
+
+
+
 import Link from "next/link";
 import {
   NavigationMenu,
@@ -8,8 +8,7 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
+
 } from "@radix-ui/react-navigation-menu";
 
 const components = [

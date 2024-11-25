@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt';
 import { NextResponse } from "next/server";
 
-export async function POST(req,res){
+export async function POST(req){
     try{
         const body =await req.json();
         console.log(body);
