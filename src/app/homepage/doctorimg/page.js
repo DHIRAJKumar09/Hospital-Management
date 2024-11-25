@@ -25,6 +25,8 @@ export const DoctorHomepage = ({ doctor }) => {
         <Image
           src={doctor.src}
           alt={doctor.name}
+          width={500}
+          height={400}
           className="w-full h-48 object-cover rounded-lg"
         />
         <p className="mt-4 text-sm text-gray-600">{doctor.description}</p>
